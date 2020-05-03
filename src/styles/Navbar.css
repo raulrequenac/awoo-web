@@ -1,0 +1,22 @@
+.Navbar {
+  width: 100vw;
+  display: flex;
+  background-color: white;
+  padding: .5rem;
+}
+
+.Navbar .logo-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.Navbar .logo-container .logo {
+  width: 4rem;
+}
+
+.Navbar .logo-container .logo-title {
+  color: #623c24;
+  margin: 0;
+  font-family: 'Baloo Paaji 2', cursive;
+  margin-bottom: -.5rem;
+}
