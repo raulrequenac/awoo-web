@@ -14,15 +14,6 @@ const loginUser = (data) => https.post('/users/login', data)
 const socialLoginUser = () => https.post('/users/login/google')
 const logoutUser = () => https.post('/users/logout')
 
-//Companies
-const registerCompany = (data) => https.post('/companies/register', data)
-const validateCompany = (token) => https.get(`/companies/validate/${token}`)
-const editCompany = (data) => https.patch('/companies/edit', data)
-const deleteCompany = () => https.post('/companies/delete')
-const loginCompany = (data) => https.post('/companies/login', data)
-const socialLoginCompany = () => https.post('/companies/login/google')
-const logoutCompany = () => https.post('/companies/logout')
-
 //Events
 const createEvent = (data) => https.post('/events/create', data)
 const editEvent = (id, data) => https.patch(`/events/${id}/edit`, data)
@@ -44,13 +35,6 @@ export default {
   loginUser,
   socialLoginUser,
   logoutUser,
-  registerCompany,
-  validateCompany,
-  editCompany,
-  deleteCompany,
-  loginCompany,
-  socialLoginCompany,
-  logoutCompany,
   createEvent,
   editEvent,
   deleteEvent,

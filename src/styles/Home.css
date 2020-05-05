@@ -1,4 +1,62 @@
 .Home {
-  background-color: #f2d29f;
+  background-image: url('/images/background.png');
+  background-size: cover;
+  background-position: center;
   height: 100%;
+}
+
+.Home .content {
+  padding: 3rem 2rem;
+  max-width: 30rem;
+}
+
+.Home .content h1 {
+  font-size: 3rem;
+  color: #4ba78c;
+  font-family: 'Baloo Paaji 2', cursive;
+  line-height: 3rem;
+  margin-bottom: 0;
+}
+.Home .content p {
+  font-family: 'Baloo Paaji 2', cursive;
+  font-weight: 700;
+}
+
+.Home .content .join {
+  text-decoration: none;
+  color: white;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #a6663f;
+  border-radius: 10px;
+  display: inline-block;
+  font-weight: 700;
+  width: 50%;
+  text-align: center;
+  transition: all 0.5s;
+}
+
+.Home .content .join span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.Home .content .join span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.Home .content .join:hover span {
+  padding-right: 25px;
+}
+
+.Home .content .join:hover span:after {
+  opacity: 1;
+  right: 0;
 }

@@ -1,8 +1,9 @@
 .Navbar {
   width: 100vw;
   display: flex;
-  background-color: white;
   padding: .5rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 .Navbar .logo-container {
@@ -16,7 +17,34 @@
 
 .Navbar .logo-container .logo-title {
   color: #623c24;
-  margin: 0;
   font-family: 'Baloo Paaji 2', cursive;
-  margin-bottom: -.5rem;
+  margin: -.5rem;
+}
+
+.Navbar .join-container {
+  display: flex;
+  align-items: center;
+  margin-right: 3rem;
+}
+
+.Navbar .join-container .login-button {
+  text-decoration: none;
+  color: white;
+  border: 2px solid white;
+  padding: .5rem;
+  font-weight: 700;
+  border-radius: 5px;
+  height: fit-content;
+  margin: 0 1rem;
+
+}
+
+.Navbar .join-container .login-button:hover {
+  background-color: white;
+  color: #78f3cf;
+}
+
+.Navbar .join-container p {
+  color: white;
+  font-weight: 700;
 }
