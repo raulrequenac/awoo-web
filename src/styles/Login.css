@@ -1,0 +1,89 @@
+.Login {
+  height: 100vh;
+}
+
+.Login .login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  height: 100vh;
+  width: 100vw; 
+}
+
+.Login .login-container .login {
+  border-bottom: 4px solid #623c24;
+  border-right: 5px solid #623c24;
+  border-radius: 5px;
+  padding: 2rem;
+  background-color: #f2d29f;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.Login .login-container .login hr {
+    width: 100%;
+    background-color: #a6663f;
+    height: 1px;
+    border: 0;
+    margin: 1rem 0;
+}
+
+.Login .login-container .login h1 {
+  font-size: 3rem;
+  color: #341a05;
+}
+
+.Login .login-container .login h1,
+.Login .login-container .login .register-container p {
+  margin: 0 0 .5rem;
+}
+
+.Login .login-container .login .register-container {
+  display: flex;
+}
+
+.Login .login-container .login .register-container .register {
+  text-decoration: none;
+  color: #4ba88c;
+  font-weight: 700;
+  margin-left: .5rem;
+}
+
+.Login .login-container .login .login-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.Login .login-container .login .login-form .form-section {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.Login .login-container .login .login-form .form-section p {
+  margin: 0;
+  color: #331a05;
+  font-weight: 700;
+}
+
+.Login .login-container .login .login-form .form-section input {
+  border-radius: 5px;
+  height: 1.5rem;
+  padding: .5rem;
+}
+
+.Login .login-container .login .login-form .login-button {
+  padding: .5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  border: 3px outset #f2d29f;
+  border-radius: 5px;
+  background-color: #c8986a;
+  color: #331a05;
+  cursor: pointer;
+}

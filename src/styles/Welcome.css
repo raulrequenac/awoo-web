@@ -1,28 +1,28 @@
-.Home {
+.Welcome {
   background-image: url('/images/background.png');
   background-size: cover;
   background-position: center;
   height: 100%;
 }
 
-.Home .content {
-  padding: 3rem 2rem;
+.Welcome .content {
+  padding: 8rem 2rem;
   max-width: 30rem;
 }
 
-.Home .content h1 {
+.Welcome .content h1 {
   font-size: 3rem;
   color: #4ba78c;
   font-family: 'Baloo Paaji 2', cursive;
   line-height: 3rem;
   margin-bottom: 0;
 }
-.Home .content p {
+.Welcome .content p {
   font-family: 'Baloo Paaji 2', cursive;
   font-weight: 700;
 }
 
-.Home .content .join {
+.Welcome .content .join {
   text-decoration: none;
   color: white;
   padding: 1rem;
@@ -36,14 +36,14 @@
   transition: all 0.5s;
 }
 
-.Home .content .join span {
+.Welcome .content .join span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-.Home .content .join span:after {
+.Welcome .content .join span:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -52,11 +52,11 @@
   transition: 0.5s;
 }
 
-.Home .content .join:hover span {
+.Welcome .content .join:hover span {
   padding-right: 25px;
 }
 
-.Home .content .join:hover span:after {
+.Welcome .content .join:hover span:after {
   opacity: 1;
   right: 0;
 }

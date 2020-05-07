@@ -1,4 +1,42 @@
 
-
 .App {
+  background-color: #f1f1f1;
+}
+
+.invalid {
+  border: 2px solid red;
+}
+
+.or {
+   width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid #a6663f; 
+   line-height: 0.1em;
+   margin: 2rem 0; 
+} 
+
+.or span { 
+  background:#f2d29f; 
+  padding:0 1rem;
+  color: #331a05; 
+}
+
+.google {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: white;
+  padding: .5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.google img {
+  width: 1.5rem;
+}
+
+.google p {
+  margin: 0;
+  font-weight: 700;
 }
