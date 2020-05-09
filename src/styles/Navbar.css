@@ -39,7 +39,7 @@
   border-radius: 5px;
   height: fit-content;
   margin: 0 1rem;
-
+  cursor: pointer;
 }
 
 .Navbar .login-container .login-button:hover {

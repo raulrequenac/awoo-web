@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const https = axios.create({
-    baseURL: "https://awoo-api.herokuapp.com",
+    baseURL: "http://localhost:5000",
     withCredentials: true
 })
 
@@ -11,7 +11,8 @@ const validateUser = (token) => https.get(`/users/validate/${token}`)
 const editUser = (data) => https.patch('/users/edit', data)
 const deleteUser = () => https.post('/users/delete')
 const loginUser = (data) => https.post('/users/login', data)
-const socialLoginUser = () => https.post('/users/login/google')
+const googleLoginUser = () => https.post('/users/login/google')
+const facebookLoginUser = () => https.post('/users/login/facebook')
 const logoutUser = () => https.post('/users/logout')
 
 //Events
@@ -33,7 +34,8 @@ export default {
   editUser,
   deleteUser,
   loginUser,
-  socialLoginUser,
+  googleLoginUser,
+  facebookLoginUser,
   logoutUser,
   createEvent,
   editEvent,

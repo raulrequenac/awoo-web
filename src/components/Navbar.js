@@ -1,9 +1,8 @@
 import React, { useContext, useState, useEffect } from "react"
-import "../styles/Navbar.css"
-import { Link } from "react-router-dom"
 import AuthContext from "../contexts/AuthContext"
+import "../styles/Navbar.css"
 
-const Navbar = ({ history }) => {
+const Navbar = ({ history, setDisplayLogin }) => {
   const { currentUser } = useContext(AuthContext)
   const [isUserLogged, setIsUserLogged] = useState(currentUser !== null)
   const path = window.document.location.pathname
@@ -18,6 +17,9 @@ const Navbar = ({ history }) => {
   //Go to the last position in browser history when click on logo
   const onClickRedirect = () => window.history.back()
 
+  //Display login when clicked
+  const onClickDisplayLogin = () => setDisplayLogin(true)
+
   return (
     <div className="Navbar">
       <div className="logo-container" onClick={onClickRedirect}>
@@ -26,9 +28,9 @@ const Navbar = ({ history }) => {
       </div>
       <div className="login-container" style={loginContainerStyle}>
         <p>¿Ya tienes una cuenta?</p>
-        <Link className="login-button" to="/login">
+        <div className="login-button" to="/login" onClick={onClickDisplayLogin}>
           Iniciar sesión
-        </Link>
+        </div>
       </div>
     </div>
   )

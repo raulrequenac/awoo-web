@@ -21,22 +21,23 @@
   color: #331a05; 
 }
 
-.google {
+.social {
   width: 100%;
   display: flex;
-  justify-content: space-around;
   align-items: center;
   background-color: white;
   padding: .5rem;
   border-radius: 5px;
   cursor: pointer;
+  margin-bottom: .5rem;
 }
 
-.google img {
+.social img {
   width: 1.5rem;
+  margin: 0 1rem;
 }
 
-.google p {
+.social p {
   margin: 0;
   font-weight: 700;
 }
