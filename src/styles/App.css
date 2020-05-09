@@ -30,6 +30,8 @@
   border-radius: 5px;
   cursor: pointer;
   margin-bottom: .5rem;
+  text-decoration: none;
+  color: black;
 }
 
 .social img {

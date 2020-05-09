@@ -6,13 +6,12 @@ const https = axios.create({
 })
 
 //Users
+const currentUser = () => https.get('/users/current')
 const registerUser = (data) => https.post('/users/register', data)
 const validateUser = (token) => https.get(`/users/validate/${token}`)
 const editUser = (data) => https.patch('/users/edit', data)
 const deleteUser = () => https.post('/users/delete')
 const loginUser = (data) => https.post('/users/login', data)
-const googleLoginUser = () => https.post('/users/login/google')
-const facebookLoginUser = () => https.post('/users/login/facebook')
 const logoutUser = () => https.post('/users/logout')
 
 //Events
@@ -29,13 +28,12 @@ const like = (id) => https.post(`/users/like/${id}`)
 const dislike = (id) => https.post(`/users/dislike/${id}`)
 
 export default { 
+  currentUser,
   registerUser,
   validateUser,
   editUser,
   deleteUser,
   loginUser,
-  googleLoginUser,
-  facebookLoginUser,
   logoutUser,
   createEvent,
   editEvent,

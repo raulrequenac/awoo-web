@@ -1,18 +1,18 @@
 import React from "react"
-import { Switch, Route } from "react-router-dom"
+import { Switch } from "react-router-dom"
 import Welcome from "./Welcome"
 import Register from "./Register"
-import Home from './Home'
+import Home from "./Home"
 import "../styles/App.css"
 import AuthenticatedRoute from "./AuthenticatedRoute"
+import NotAuthenticatedRoute from "./NotAuthenticatedRoute"
 
 function App() {
   return (
     <div className="App">
       <Switch>
-        <Route exact path="/" component={Welcome} />
-        <AuthenticatedRoute exact path="/register" component={Register} />
-        <AuthenticatedRoute exact path="/home" component={Home} />
+        <AuthenticatedRoute exact path="/" component={Welcome} />
+        <NotAuthenticatedRoute exact path="/home" component={Home} />
       </Switch>
     </div>
   )

@@ -2,10 +2,10 @@ import React, { useContext } from 'react'
 import AuthContext from '../contexts/AuthContext'
 import { Redirect, Route } from 'react-router-dom'
 
-const AuthenticatedRoute = ({ component, ...rest }) => {
+const NotAuthenticatedRoute = ({ component, ...rest }) => {
   const { currentUser } = useContext(AuthContext)
 
-  return currentUser ? <Redirect to="/home" /> : <Route {...rest} component={component} />
+  return currentUser ? <Route {...rest} component={component} /> : <Redirect to="/" />
 }
 
-export default AuthenticatedRoute
+export default NotAuthenticatedRoute

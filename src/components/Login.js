@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useContext } from "react"
 import { Link, Redirect } from "react-router-dom"
 import AwooServices from "../services/AwooServices"
-import "../styles/Login.css"
+import "../styles/Join.css"
 import AuthContext from "../contexts/AuthContext"
 
 const Login = ({ display, setDisplay }) => {
-  const { loginUser, googleLoginUser, facebookLoginUser } = AwooServices
+  const { loginUser } = AwooServices
   const { setUser } = useContext(AuthContext)
   const [data, setData] = useState({ email: "", password: "" })
   const [success, setSuccess] = useState(false)
@@ -28,33 +28,20 @@ const Login = ({ display, setDisplay }) => {
     setState({ error: false, loading: true })
   }
 
-  const onClickGoogleLogin = (e) => googleLoginUser()
-    .then((user) => {
-      setUser(user)
-      setSuccess(true)
-    })
-    .catch((e) => console.log(e))
-  
-  const onClickFacebookLogin = (e) => facebookLoginUser()
-    .then((user) => {
-      setUser(user)
-      setSuccess(true)
-    })
-    .catch((e) => console.log(e))
-  
   const onClickExit = () => setDisplay(false)
 
   //Check that there weren't errors, then set success to true
   useEffect(() => {
     if (loading && !error)
       loginUser(data).then(
-        () => {
+        (user) => {
           setSuccess(true)
           setState({ error: false, loading: false })
+          setUser(user)
         },
         () => setState({ error: true, loading: false })
       )
-  }, [data, error, loading, loginUser])
+  }, [data, error, loading, loginUser, setUser])
 
   //If there were errors, show it
   const errorClassName = error ? "invalid" : ""
@@ -62,10 +49,12 @@ const Login = ({ display, setDisplay }) => {
   if (success) return <Redirect to="/home" />
 
   return (
-    <div className="Login" style={display}>
-      <div className="login-bg"/>
-      <div className="exit" onClick={onClickExit}><img alt="" src="/images/exit.svg"/></div>
-      <div className="login">
+    <div className="Login join" style={display}>
+      <div className="join-bg" />
+      <div className="exit" onClick={onClickExit}>
+        <img alt="" src="/images/exit.svg" />
+      </div>
+      <div className="join">
         <h1>Iniciar sesión</h1>
         <div className="register-container">
           <p>¿No eres miembro todavía?</p>
@@ -74,7 +63,7 @@ const Login = ({ display, setDisplay }) => {
           </Link>
         </div>
         <hr />
-        <form className="login-form" onSubmit={handleSubmit}>
+        <form className="join-form" onSubmit={handleSubmit}>
           <label className="form-section">
             <p>Correo electrónico:</p>
             <input
@@ -98,20 +87,23 @@ const Login = ({ display, setDisplay }) => {
           <input
             type="submit"
             value="Iniciar sesión"
-            className="login-button"
+            className="join-button"
           />
         </form>
         <h2 className="or">
           <span>ó</span>
         </h2>
-        <div className="social" onClick={onClickGoogleLogin}>
+        <a className="social" href="http://localhost:5000/users/login/google">
           <img alt="" src="/images/google.svg" />
           <p>Iniciar sesión con Google</p>
-        </div>
-        <div className="social" onClick={onClickFacebookLogin}>
+        </a>
+        <a
+          className="social"
+          href="https://awoo-api.herokuapp.com/users/login/facebook"
+        >
           <img alt="" src="/images/facebook.svg" />
           <p>Iniciar sesión con Facebook</p>
-        </div>
+        </a>
       </div>
     </div>
   )
