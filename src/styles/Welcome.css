@@ -22,7 +22,7 @@
   font-weight: 700;
 }
 
-.Welcome .content .join {
+.Welcome .content .join-button {
   text-decoration: none;
   color: white;
   padding: 1rem;
@@ -36,14 +36,14 @@
   transition: all 0.5s;
 }
 
-.Welcome .content .join span {
+.Welcome .content .join-button span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-.Welcome .content .join span:after {
+.Welcome .content .join-button span:after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -52,11 +52,11 @@
   transition: 0.5s;
 }
 
-.Welcome .content .join:hover span {
+.Welcome .content .join-button:hover span {
   padding-right: 25px;
 }
 
-.Welcome .content .join:hover span:after {
+.Welcome .content .join-button:hover span:after {
   opacity: 1;
   right: 0;
 }

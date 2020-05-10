@@ -43,3 +43,13 @@
   margin: 0;
   font-weight: 700;
 }
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.d-none {
+  display: none;
+}

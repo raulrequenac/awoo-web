@@ -1,7 +1,6 @@
 import React from "react"
 import { Switch } from "react-router-dom"
 import Welcome from "./Welcome"
-import Register from "./Register"
 import Home from "./Home"
 import "../styles/App.css"
 import AuthenticatedRoute from "./AuthenticatedRoute"

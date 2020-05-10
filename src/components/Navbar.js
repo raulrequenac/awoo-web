@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react"
 import AuthContext from "../contexts/AuthContext"
 import "../styles/Navbar.css"
 
-const Navbar = ({ history, setDisplayLogin }) => {
+const Navbar = ({ history, setDisplay }) => {
   const { currentUser } = useContext(AuthContext)
   const [isUserLogged, setIsUserLogged] = useState(currentUser !== null)
   const path = window.document.location.pathname
@@ -18,7 +18,7 @@ const Navbar = ({ history, setDisplayLogin }) => {
   const onClickRedirect = () => window.history.back()
 
   //Display login when clicked
-  const onClickDisplayLogin = () => setDisplayLogin(true)
+  const onClickDisplayLogin = () => setDisplay({login: true, register: false})
 
   return (
     <div className="Navbar">

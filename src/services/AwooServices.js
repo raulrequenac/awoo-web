@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const https = axios.create({
-    baseURL: "http://localhost:5000",
+    baseURL: "http://awoo-api.herokuapp.com",
     withCredentials: true
 })
 

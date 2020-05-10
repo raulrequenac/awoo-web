@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from "react"
-import { Link, Redirect } from "react-router-dom"
+import { Redirect } from "react-router-dom"
 import AwooServices from "../services/AwooServices"
 import "../styles/Join.css"
 import AuthContext from "../contexts/AuthContext"
@@ -28,7 +28,9 @@ const Login = ({ display, setDisplay }) => {
     setState({ error: false, loading: true })
   }
 
-  const onClickExit = () => setDisplay(false)
+  const onClickExit = () => setDisplay({ login: false, register: false })
+  const onClickDisplayRegister = () =>
+    setDisplay({ login: false, register: true })
 
   //Check that there weren't errors, then set success to true
   useEffect(() => {
@@ -54,13 +56,13 @@ const Login = ({ display, setDisplay }) => {
       <div className="exit" onClick={onClickExit}>
         <img alt="" src="/images/exit.svg" />
       </div>
-      <div className="join">
+      <div className="join-container center">
         <h1>Iniciar sesión</h1>
         <div className="register-container">
           <p>¿No eres miembro todavía?</p>
-          <Link to="/register" className="register">
+          <div className="register" onClick={onClickDisplayRegister}>
             Registrarse
-          </Link>
+          </div>
         </div>
         <hr />
         <form className="join-form" onSubmit={handleSubmit}>
@@ -84,11 +86,7 @@ const Login = ({ display, setDisplay }) => {
               onChange={handleOnChange}
             ></input>
           </label>
-          <input
-            type="submit"
-            value="Iniciar sesión"
-            className="join-button"
-          />
+          <input type="submit" value="Iniciar sesión" className="join-button" />
         </form>
         <h2 className="or">
           <span>ó</span>
